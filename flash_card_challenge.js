@@ -27,6 +27,12 @@ var nk5_deck_str = 'N5K';
 var nk5_flip_deck_str = 'N5K_FLIP';
 var nk4_deck_str = 'N4K';
 var nk4_flip_deck_str = 'N4K_FLIP';
+var nk3_deck_str = 'N3K';
+var nk3_flip_deck_str = 'N3K_FLIP';
+var nk2_deck_str = 'N2K';
+var nk2_flip_deck_str = 'N2K_FLIP';
+var nk1_deck_str = 'N1K';
+var nk1_flip_deck_str = 'N1K_FLIP';
 // set deck dropdowns with above strings
 
 var card_deck = {};
@@ -44,6 +50,15 @@ card_deck[nk5_flip_deck_str] = flip(N5_Kanji);
 
 card_deck[nk4_deck_str] = N4_Kanji;
 card_deck[nk4_flip_deck_str] = flip(N4_Kanji);
+
+card_deck[nk3_deck_str] = N3_Kanji;
+card_deck[nk3_flip_deck_str] = flip(N3_Kanji);
+
+card_deck[nk2_deck_str] = N2_Kanji;
+card_deck[nk2_flip_deck_str] = flip(N2_Kanji);
+
+card_deck[nk1_deck_str] = N1_Kanji;
+card_deck[nk1_flip_deck_str] = flip(N1_Kanji);
 
 function flip(a_deck){
   var temp = [];
