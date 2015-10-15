@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="flash_card_challenge.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+	<title>Flash Card Challenge</title>
+	<meta charset="utf-8">
+	<!-- <link rel="stylesheet" type="text/css" href="">  -->
+</head>
+
+<body>
+<div id='wrapper'>
+<h1>Flash Card Challenge</h1>
+
+<div id="intro_screen">
+  Two players select their own flashcard deck and time limit. An advanced player can compete against a beginner, a computer person can compete against a Japanese student...
+  <p>Select number of cards for next game, then click next: </p>
+  <select class="dropdown" id="num_cards">
+
+    <!-- THIS CAN TO ONLY BE UP TO n where (((MIN DECK LENGTH - n*2) - 3) > 0) -->
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <!-- <option value="num_c14">7</option>
+    <option value="num_c14">8</option> -->
+  </select> 
+  <button id="to_2nd_screen_button">Next</button>
+</div> <!-- end intro screen -->
+
+<div id="player_setup_screen">
+   <fieldset>
+   <legend id="player_info_legend">Player Info</legend>
+
+   <div class="form-row">
+      <label>Player 1 Name</label>
+      <textarea class="player_name" id="player_name1" type="text" name="firstname" placeholder="First name"></textarea>
+    </div>
+
+   <div class="form-row">
+      <label>Player 1 Flashcard Deck</label>
+      <select class="dropdown" id="deck1">
+        <option>Select One</option>
+        <optgroup label="Web Development">
+          <option value="CS">Compuiter Science: Linux</option>
+          <option value="LNX">Linux Commands</option>
+          <option value="LNX_FLIP">Linux Commands Flipped</option>
+          <option value="JS1">Javascript 1</option>
+          <option value="JS2">Javascript 2</option>
+          <option value="VIM">Vim Commands</option>
+        </optgroup>
+        <optgroup label="Japanese">
+          <option value="N5K">N5 Kanji</option>
+          <option value="N5K_FLIP">N5 Kanji Flipped</option>
+          <option value="N4K">N4 Kanji</option>
+          <option value="N4K_FLIP">N4 Kanji Flipped</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Player 1 Time Limit</label>
+      <select class="dropdown" id="time_limit1">
+        <option value="1000">1000 second time limit</option>
+        <option value="6">6 secs</option>
+        <option value="10">10 secs</option>
+        <option value="15">15 secs</option>
+      </select> 
+    </div>
+
+    <div class="form-row">
+      <label>Player 2 Name</label>
+      <textarea class="player_name" id="player_name2" type="text" name="firstname" placeholder="First name"></textarea>
+    </div>
+
+   <div class="form-row">
+      <label>Player 2 Flashcard Deck</label>
+      <select class="dropdown" id="deck2">
+        <option>Select One</option>
+        <optgroup label="Web Development">
+          <option value="CS">Compuiter Science: Linux</option>
+          <option value="LNX">Linux Commands</option>
+          <option value="LNX_FLIP">Linux Commands Flipped</option>
+          <option value="JS1">Javascript 1</option>
+          <option value="JS2">Javascript 2</option>
+          <option value="VIM">Vim Commands</option>
+        </optgroup>
+        <optgroup label="Japanese">
+          <option value="N5K">N5 Kanji</option>
+          <option value="N5K_FLIP">N5 Kanji Flipped</option>
+          <option value="N4K">N4 Kanji</option>
+          <option value="N4K_FLIP">N4 Kanji Flipped</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Player 2 Time Limit</label>
+      <select class="dropdown" id="time_limit2">
+        <option value="1000">1000 second time limit</option>
+        <option value="6">6 secs</option>
+        <option value="10">10 secs</option>
+        <option value="15">15 secs</option>
+      </select> 
+    </div>
+
+    <button id="to_3rd_screen_button">Begin Play</button>
+  </fieldset>
+</div> <!-- end player setup screen -->
+
+
+<div id="main_screen">
+  <div id='card_area'>
+    <div class="display" id="elapsed-time">elapsed time here</div>
+    <div id="player">Player name here</div>
+    <div id="card_items">
+      <div class="q_item">
+        <p class="card_title">Q:</p>
+        <div  id="question">Q</div>
+      </div>
+      <div class="multi_answers" id='a1'>
+        <p class="card_title">A1:</p>
+        <div id="answer1">A1</div>
+      </div>
+      <div class="multi_answers" id='a2'>
+        <p class="card_title">A2:</p>
+        <div id="answer2">A2</div>
+      </div>
+      <div class="multi_answers" id='a3'>
+        <p class="card_title">A3:</p>
+        <div id="answer3">A3</div>
+      </div>
+      <div class="multi_answers" id='a4'>
+        <p class="card_title">A4:</p>
+        <div id="answer4">A4</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="progress_area">
+    <div class="progress_areas" id="p1_name">
+      <div id="p1_progress_text"></div>
+      <div class="player_progress" id="player1_progress"></div>
+    </div>
+    <div class="progress_areas" id="p2_name">
+      <div id="p2_progress_text"></div>
+      <div class="player_progress" id="player2_progress"></div>
+    </div>
+  </div>
+</div> <!-- end main screen -->
+
+
+
+<div id="game_result_screen">
+  <div id="game_result"></div>
+  <button id="new_game_button">New Game</button>
+</div> <!-- end result screen -->
+</div> <!--wrapper-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script type="text/javascript" src="load_flash_card_data.js"></script>
+<script type="text/javascript" src="flash_card_challenge.js"></script>
+
+</body>
+</html>
