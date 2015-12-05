@@ -4,6 +4,9 @@
 General Assembly WDI Project 1:
 Flash Card Challenge (flash_card_challenge.html, flash_card_challenge.css, flash_card_challenge.js,   load_flash_card_data.js, stacked_circles_@2x.png, FlashCardChallengeClassDiagram.jpg, FlashcardChallengeWireframe.pdf and flash_card_challenge_user_stories.txt)
 
+Technologies used:
+HTML, CSS, Javascript and jQuery
+
 Approach Taken:
 Requirements/Design: developed wireframe, user stories and UML
 Code: developed HTML frame, basic JS, associated CSS, built up all 3 per reqts./design
