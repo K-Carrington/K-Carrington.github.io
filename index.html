@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./home_page.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <title>Ken Carrington</title>
+  <meta charset="utf-8">
+	<!-- <link rel="stylesheet" type="text/css" href="">  -->
+</head>
+
+<body>
+ <nav class="navbar navbar-inverse navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Ken Carrington - Software Engineer</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+  	<div class="row">
+      <div class="col-md-4">
+      	<div class="skillsets">
+      	  <div class="skillset-bgs" id="CPP-skillset-bg">
+      	    <div class="code-snips" id="CPP-code-photo"></div>
+          </div>
+          <div class="skill-descrs">
+      	    <p>Unix/C++/Python</b>
+      	  </div>
+        </div>
+        <div class="skillsets">  
+      	  <div class="skillset-bgs" id="RoR-skillset-bg">
+      	    <div class="code-snips" id="RoR-code-photo"></div>
+      	  </div>
+      	  <div class="skill-descrs">
+      	    <p>Ruby on Rails</p>
+      	  </div>
+      	</div>
+      </div>
+
+      <div class="col-md-4">
+      	<div id="ken-photo"></div>
+      </div>
+
+      <div  class="col-md-4">
+      	<div class="skillsets">
+          <div class="skillset-bgs" id="MEAN-skillset-bg">
+      	    <div class="code-snips" id="MEAN-code-photo"></div>
+      	  </div>
+      	  <div class="skill-descrs">
+      	  	<p>MEAN stack</p>
+      	  </div>
+      	</div>
+      	<div class="skillsets">
+      	  <div class="skillset-bgs" id="FrontEnd-skillset-bg">
+      	    <div class="code-snips" id="FrontEnd-code-photo"></div>
+      	  </div>
+      	  <div class="skill-descrs">
+      	    <p>Front end web</p>
+      	  </div>
+      	</div>
+      </div>
+    </div>
+
+    <div class="row details" id="CPP-details">
+      <div  class="col-md-6">
+        <div class="project-pics" id="CPP-pic"></div>
+      </div>
+      <div  class="col-md-6">
+      	<h3>Dijkstra Shortest Path Solution - built with: C++</h3>
+      	<div class="details-buttons">
+      	  <a href="https://github.com/K-Carrington/Cpp_Practice/tree/master/Stanford_Algorithms_Class/ProgQ5"><button class="btn btn-primary btn-lg">Dijkstra C++ Source Code</button></a>
+        </div>
+      	<!-- Modal -->
+      	<button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv">Reading List</button>
+          <div class="modal fade" id="modalDiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="modal-title" id="myModalLabel">Reading list for C++ (and Unix and Python)</h3>
+                </div>
+                <div class="modal-body">
+                  <h4>....many sources to be entered....</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal end -->
+      </div>
+    </div>
+
+    <!--MEAN stack-->
+    <div class="row details" id="MEAN-details"> 
+      <div class="col-md-6">
+        <div class="project-pics" id="project4-pic"></div>
+      </div>
+      <div  class="col-md-6">
+      	<h3>Goals App - built with: MongoDB, ExpressJS, AngularJS and Node.js</h3>
+      	<div class="details-buttons">
+      	  <a href="https://github.com/K-Carrington/GoalSettingAndMonitoringApp"><button class="btn btn-primary btn-lg">Goals App Source Code</button></a>
+        </div>
+        <div class="details-buttons">
+        	<a href="https://nameless-temple-9327.herokuapp.com/"><button class="btn btn-primary btn-lg">Goals App Deployment</button></a>
+        </div>
+      	<!-- Modal -->
+      	<button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv">Reading List</button>
+          <div class="modal fade" id="modalDiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="modal-title" id="myModalLabel">Reading list for MEAN stack</h3>
+                </div>
+                <div class="modal-body">
+                  <h4>MEAN Machine by Chris Sevilleja and Holly Lloyd</h4>
+                  <h4><a href="https://angularjs.org/">https://angularjs.org/</a></h4>
+                  <h4>The Little MongoDB Book by Karl Seguin</h4>
+                  <h4><a href="http://www.tutorialspoint.com/mongodb/">http://www.tutorialspoint.com/mongodb/</a></h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal end -->
+      </div>
+    </div>
+
+    <!--MEN stack -->
+    <div class="row details" id="MEN-details">
+      <div  class="col-md-6">
+      	<div class="project-pics" id="project3-pic"></div>
+      </div>
+      <div  class="col-md-6">
+      	To be completed soon - List of tools used and link to reading list
+      </div>
+    </div>
+
+    <div class="row details" id="RoR-details">
+      <div  class="col-md-6">
+        <div class="project-pics" id="project2-pic"></div>
+      </div>
+      <div  class="col-md-6">
+      	To be completed soon - List of tools used and link to reading list
+      </div>
+    </div>
+
+    <div class="row details" id="FrontEnd-details">
+      <div  class="col-md-6">
+        <div class="project-pics" id="project1-pic"></div>
+      </div>
+      <div  class="col-md-6">
+      	To be completed soon - List of tools used and link to reading list
+      </div>
+    </div>
+
+    <div class="row details" id="Contact-details">
+      <div  class="col-md-9">
+      	To be completed soon - Links to LinkedIn, Github, and email here
+      </div>
+      <div  class="col-md-3">
+      	Another photo here
+      </div>
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>
