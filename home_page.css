@@ -3,20 +3,23 @@
 body {
     text-align: center;
     margin: 0 auto;
-    background-image: url('./hixs_pattern.png'); /*from subtle patters site (transparant pngs) */
+    background-image: url('img/hixs_pattern.png'); /*from subtle patters site (transparant pngs) */
     /*background-image: url('./dgrey031.gif'); */
     /*background-color: #F4EAD5;*/
     font-family: 'Lato', sans-serif;
   }
 
-#ken-photo {
+#summary {
+  margin-top: 60px;
+}
 
+#ken-photo {
 	width: 220px;
 	height: 220px;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	background: url('./ken_photo1.jpg') no-repeat;
+	background: url('img/ken_photo1.jpg') no-repeat;
     margin-top: 130px; /* ~ a little less than half of skillset height */
     margin-left: 50px;  /* TBD add a responsive-ness to change these margins */
     background-size: 100%;
@@ -86,17 +89,18 @@ body {
   color: white;
   height: 400px;
   width: 1200px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: white;
 }
 
 .project-pics {
 	opacity: 0.8;
-	width: 550px;
-	height: 400px;
+	width: 580px;
+	height: 350px;
 	border: 1px solid;
-    border-color: white;
+  border-color: white;
 	border-radius: 25px;
+  margin-top: 25px;
 }
 #CPP-pic {
   background: url('./CPP_code.jpg') no-repeat;
@@ -104,23 +108,27 @@ body {
 }
 #project4-pic {
   background: url('./Project4.png') no-repeat;
-  background-size: 135%;
+  background-size: 120%;
 }
 #project3-pic {
   background: url('./Project3.png') no-repeat;
-  background-size: 130%;
+  background-size: 120%;
 }
 #project2-pic {
   background: url('./Project2.png') no-repeat;
-  background-size: 110%;
+  background-size: 105%;
 }
 #project1-pic {
   background: url('./Project1.png') no-repeat;
-  background-size: 100%;
+  background-size: 105%;
 }
 
 .details-buttons {
-  padding: 15px;
+  opacity: 0.8;
+  margin: 15px;
+  width: 200px;
+  text-align: center;
+  /*margin: 0 auto;*/
 }
 
 /*modal*/

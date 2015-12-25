@@ -14,7 +14,7 @@
 </head>
 
 <body>
- <nav class="navbar navbar-inverse navbar-custom">
+ <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top sticky">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -28,24 +28,28 @@
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="summary">
   	<div class="row">
       <div class="col-md-4">
       	<div class="skillsets">
-      	  <div class="skillset-bgs" id="CPP-skillset-bg">
-      	    <div class="code-snips" id="CPP-code-photo"></div>
-          </div>
-          <div class="skill-descrs">
-      	    <p>Unix/C++/Python</b>
-      	  </div>
+          <a href="#CPP-details">
+      	    <div class="skillset-bgs" id="CPP-skillset-bg">
+      	      <div class="code-snips" id="CPP-code-photo"></div>
+            </div>
+            <div class="skill-descrs">
+      	      <p>Unix/C++/Python</b>
+      	    </div>
+          </a>
         </div>
-        <div class="skillsets">  
-      	  <div class="skillset-bgs" id="RoR-skillset-bg">
-      	    <div class="code-snips" id="RoR-code-photo"></div>
-      	  </div>
-      	  <div class="skill-descrs">
-      	    <p>Ruby on Rails</p>
-      	  </div>
+        <div class="skillsets">
+          <a href="#RoR-details"> 
+      	    <div class="skillset-bgs" id="RoR-skillset-bg">
+      	      <div class="code-snips" id="RoR-code-photo"></div>
+      	    </div>
+      	    <div class="skill-descrs">
+      	      <p>Ruby on Rails</p>
+      	    </div>
+          </a>
       	</div>
       </div>
 
@@ -55,34 +59,39 @@
 
       <div  class="col-md-4">
       	<div class="skillsets">
-          <div class="skillset-bgs" id="MEAN-skillset-bg">
-      	    <div class="code-snips" id="MEAN-code-photo"></div>
-      	  </div>
-      	  <div class="skill-descrs">
-      	  	<p>MEAN stack</p>
-      	  </div>
+          <a href="#MEAN-details">
+            <div class="skillset-bgs" id="MEAN-skillset-bg">
+      	      <div class="code-snips" id="MEAN-code-photo"></div>
+      	    </div>
+      	    <div class="skill-descrs">
+      	  	  <p>MEAN stack</p>
+      	    </div>
+          </a>
       	</div>
       	<div class="skillsets">
-      	  <div class="skillset-bgs" id="FrontEnd-skillset-bg">
-      	    <div class="code-snips" id="FrontEnd-code-photo"></div>
-      	  </div>
-      	  <div class="skill-descrs">
-      	    <p>Front end web</p>
-      	  </div>
+          <a href="#FrontEnd-details">
+      	    <div class="skillset-bgs" id="FrontEnd-skillset-bg">
+      	      <div class="code-snips" id="FrontEnd-code-photo"></div>
+      	    </div>
+      	    <div class="skill-descrs">
+      	      <p>Front end web</p>
+      	    </div>
+          </a>
       	</div>
       </div>
     </div>
 
     <div class="row details" id="CPP-details">
       <div  class="col-md-6">
-        <div class="project-pics" id="CPP-pic"></div>
+        <div class="project-pics" id="CPP-pic" onclick="window.open('https://github.com/K-Carrington/Cpp_Practice/tree/master/Stanford_Algorithms_Class/ProgQ5', '_blank')" onmouseover="" style="cursor: pointer"></div>
       </div>
       <div  class="col-md-6">
       	<h3>Dijkstra Shortest Path Solution - built with: C++</h3>
-      	<div class="details-buttons">
-      	  <a href="https://github.com/K-Carrington/Cpp_Practice/tree/master/Stanford_Algorithms_Class/ProgQ5"><button class="btn btn-primary btn-lg">Dijkstra C++ Source Code</button></a>
-        </div>
-      	<!-- Modal -->
+        <p>Completed during my period of C++ review. This was part of the Corsera Stanford Algorithms course. Also reviewed and worked with Unix/Linux, Python, SQL and Perl during this time.</p>
+      	<div><button class="btn btn-primary btn-md details-buttons" onclick="window.open('https://github.com/K-Carrington/Cpp_Practice', '_blank')">
+      	  C++ Source Code
+        </button></div>
+      	<!-- Modal C++, Unix and Python reading list -->
       	<button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv">Reading List</button>
           <div class="modal fade" id="modalDiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -92,7 +101,9 @@
                   <h3 class="modal-title" id="myModalLabel">Reading list for C++ (and Unix and Python)</h3>
                 </div>
                 <div class="modal-body">
-                  <h4>....many sources to be entered....</h4>
+                  <h4 onclick="window.open('http://en.cppreference.com/w/', '_blank')" onmouseover="" style="cursor: pointer">http://en.cppreference.com/w/</h4>
+                  <h4 onclick="window.open('http://www.learncpp.com/, '_blank')" onmouseover="" style="cursor: pointer">http://www.learncpp.com/</h4>
+                  <h4>....many more sources to be entered....</h4>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -107,19 +118,17 @@
     <!--MEAN stack-->
     <div class="row details" id="MEAN-details"> 
       <div class="col-md-6">
-        <div class="project-pics" id="project4-pic"></div>
+        <div class="project-pics" id="project4-pic" onclick="window.open('https://nameless-temple-9327.herokuapp.com', '_blank')" onmouseover="" style="cursor: pointer"></div>
       </div>
       <div  class="col-md-6">
       	<h3>Goals App - built with: MongoDB, ExpressJS, AngularJS and Node.js</h3>
-      	<div class="details-buttons">
-      	  <a href="https://github.com/K-Carrington/GoalSettingAndMonitoringApp"><button class="btn btn-primary btn-lg">Goals App Source Code</button></a>
-        </div>
-        <div class="details-buttons">
-        	<a href="https://nameless-temple-9327.herokuapp.com/"><button class="btn btn-primary btn-lg">Goals App Deployment</button></a>
-        </div>
-      	<!-- Modal -->
-      	<button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv">Reading List</button>
-          <div class="modal fade" id="modalDiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <p>This is practice with the MEAN stack. The intent is to eventually collect goal monitoring data (hours spent, quality of practice and results) and display them graphically with D3.</p>
+        <div><button class="btn btn-primary btn-md details-buttons" onclick="window.open('https://github.com/K-Carrington/GoalSettingAndMonitoringApp', '_blank')">
+          Source Code
+        </button></div>
+      	<!-- Modal MEAN stack reading list -->
+      	<button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv2">Reading List</button>
+          <div class="modal fade" id="modalDiv2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -128,9 +137,10 @@
                 </div>
                 <div class="modal-body">
                   <h4>MEAN Machine by Chris Sevilleja and Holly Lloyd</h4>
-                  <h4><a href="https://angularjs.org/">https://angularjs.org/</a></h4>
+                  <h4 onclick="window.open('https://angularjs.org/', '_blank')" onmouseover="" style="cursor: pointer">https://angularjs.org/</h4>
                   <h4>The Little MongoDB Book by Karl Seguin</h4>
-                  <h4><a href="http://www.tutorialspoint.com/mongodb/">http://www.tutorialspoint.com/mongodb/</a></h4>
+                  <h4 onclick="window.open('http://www.tutorialspoint.com/mongodb/', '_blank')" onmouseover="" style="cursor: pointer">http://www.tutorialspoint.com/mongodb/</a></h4>
+                  <h4>....more sources to be entered....</h4>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -145,28 +155,65 @@
     <!--MEN stack -->
     <div class="row details" id="MEN-details">
       <div  class="col-md-6">
-      	<div class="project-pics" id="project3-pic"></div>
+        <div class="project-pics" id="project3-pic" onclick="window.open('http://halfwayhang.herokuapp.com/', '_blank')" onmouseover="" style="cursor: pointer"></div>
       </div>
       <div  class="col-md-6">
-      	To be completed soon - List of tools used and link to reading list
+        <h3>Halfway Meeting Place App - built with: MongoDB, ExpressJS, Node.js, Google Maps API and Yelp API</h3>
+        <p>This was our first team effort at General Assembly's WDI-19, also the first time using the above technologies. This app finds meeting locations that are near the mid point of two given locations.</p>
+        <div><button class="btn btn-primary btn-md details-buttons" onclick="window.open('https://github.com/K-Carrington/Half_way_locations_recommender', '_blank')">
+          Source Code
+        </button></div>  	
       </div>
     </div>
 
     <div class="row details" id="RoR-details">
       <div  class="col-md-6">
-        <div class="project-pics" id="project2-pic"></div>
+        <div class="project-pics" id="project2-pic" onclick="window.open('http://pacific-tor-5198.heroku.com/', '_blank')" onmouseover="" style="cursor: pointer"></div>
       </div>
       <div  class="col-md-6">
-      	To be completed soon - List of tools used and link to reading list
+        <h3>Pun Translations App - built with: Ruby on Rails, PostgreSQL and Bootstrap</h3>
+        <p>This is my first Ruby on Rais app. It's also the first time I used bootstrap. This is a blogging app for entering puns and their translations into other languages in order to assist language learners.</p>
+        <div><button class="btn btn-primary btn-md details-buttons" onclick="window.open('https://github.com/K-Carrington/GA-Workspace/tree/master/06-Week/project2', '_blank')">
+          Source Code
+        </button></div>   
+      </div>
+
+        <!-- Modal RoR reading list -->
+        <button type="button" class="btn btn-primary btn-md details-buttons" data-toggle="modal" data-target="#modalDiv3">Reading List</button>
+          <div class="modal fade" id="modalDiv3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="modal-title" id="myModalLabel">Reading list for MEAN stack</h3>
+                </div>
+                <div class="modal-body">
+                  <h4>Ruby on Rails Tutorial by Michael Hartl</h4>
+                  <h4 onclick="window.open('http://guides.rubyonrails.org/', '_blank')" onmouseover="" style="cursor: pointer">http://guides.rubyonrails.org/</h4>
+                  <h4>Learn Ruby on Rails by Daniel Kehoe</h4>
+                  <h4 onclick="window.open('http://rubyonrails.org/documentation/', '_blank')" onmouseover="" style="cursor: pointer">http://rubyonrails.org/documentation/</a></h4>
+                  <h4>....more sources to be entered....</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal end -->
+
+
       </div>
     </div>
 
     <div class="row details" id="FrontEnd-details">
       <div  class="col-md-6">
-        <div class="project-pics" id="project1-pic"></div>
+        <div class="project-pics" id="project1-pic" onclick="window.open('http://k-carrington.github.io/flash_card_challenge', '_blank')" onmouseover="" style="cursor: pointer"></div>
       </div>
       <div  class="col-md-6">
+
       	To be completed soon - List of tools used and link to reading list
+
       </div>
     </div>
 
