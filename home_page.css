@@ -1,12 +1,12 @@
 
 
 body {
-    text-align: center;
-    margin: 0 auto;
-    background-image: url('img/hixs_pattern.png'); /*from subtle patters site (transparant pngs) */
-    /*background-image: url('./dgrey031.gif'); */
-    /*background-color: #F4EAD5;*/
-    font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  background-image: url('img/hixs_pattern.png'); /*from subtle patters site (transparant pngs) */
+  /*background-image: url('./dgrey031.gif'); */
+  /*background-color: #F4EAD5;*/
+  font-family: 'Lato', sans-serif;
   }
 
 #summary {
@@ -14,23 +14,26 @@ body {
 }
 
 #ken-photo {
-	width: 220px;
-	height: 220px;
+	width: 210px;
+	height: 210px;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	background: url('img/ken_photo1.jpg') no-repeat;
-    margin-top: 130px; /* ~ a little less than half of skillset height */
-    margin-left: 50px;  /* TBD add a responsive-ness to change these margins */
-    background-size: 100%;
+  background-size: 100%;
+
+  /* push down and to the right */
+  margin-top: 130px; /* ~ a little less than half of skillset height */
+  margin-left: 60px;  /* TBD add a responsive-ness to change these margins */
 }
 .skillsets {
-	max-width: 350px;
-	max-height: 350px;
+	width: 350px;
+	height: 180px;
+  margin-bottom: 70px;
 }
 .skillset-bgs {
-	max-width: 350px;
-	max-height: 300px;
+	width: 350px;
+	height: 180px;
 	border: 4px solid;
 	border-color: white;
 	border-radius: 25px;
@@ -43,19 +46,19 @@ body {
 }
 
 #CPP-code-photo {
-	background: url('./CPP_code.jpg') no-repeat;
+	background: url('img/CPP_code.jpg') no-repeat;
 	background-size: 70%;
 }
 #RoR-code-photo {
-	background: url('./RoR_code.jpg') no-repeat;
+	background: url('img/RoR_code.jpg') no-repeat;
 	background-size: 70%;
 }
 #MEAN-code-photo {
-	background: url('./MEAN_code.jpg') no-repeat;
+	background: url('img/MEAN_code.jpg') no-repeat;
 	background-size: 80%;
 }
 #FrontEnd-code-photo {
-	background: url('./FrontEnd_code.jpg') no-repeat;
+	background: url('img/FrontEnd_code.jpg') no-repeat;
 	background-size: 80%;
 }
 
@@ -66,24 +69,23 @@ body {
 }
 #CPP-skillset-bg {
   
-  background: url('./cpp_logo') no-repeat;
+  background: url('img/cpp_logo') no-repeat;
   background-size: 100%;
 }
 #MEAN-skillset-bg {
-  background: url('./mean_logo.jpg') no-repeat;
+  background: url('img/mean_logo.jpg') no-repeat;
   background-size: 100%;
 }
 #RoR-skillset-bg {
-  background: url('./logo-rails.jpg') no-repeat;
+  background: url('img/logo-rails.jpg') no-repeat;
   margin-top: 80px;
   background-size: 100%;
 }
 #FrontEnd-skillset-bg {
-  background: url('./front_end_web_logo.png') no-repeat;
+  background: url('img/front_end_web_logo.png') no-repeat;
   margin-top: 80px;
   background-size: 100%;
 }
-
 
 .details {
   color: white;
@@ -103,23 +105,23 @@ body {
   margin-top: 25px;
 }
 #CPP-pic {
-  background: url('./CPP_code.jpg') no-repeat;
+  background: url('img/CPP_code.jpg') no-repeat;
   background-size: 100%;
 }
 #project4-pic {
-  background: url('./Project4.png') no-repeat;
+  background: url('img/Project4.png') no-repeat;
   background-size: 120%;
 }
 #project3-pic {
-  background: url('./Project3.png') no-repeat;
+  background: url('img/Project3.png') no-repeat;
   background-size: 120%;
 }
 #project2-pic {
-  background: url('./Project2.png') no-repeat;
+  background: url('img/Project2.png') no-repeat;
   background-size: 105%;
 }
 #project1-pic {
-  background: url('./Project1.png') no-repeat;
+  background: url('img/Project1.png') no-repeat;
   background-size: 105%;
 }
 
