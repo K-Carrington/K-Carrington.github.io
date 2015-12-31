@@ -23,7 +23,8 @@ body {
   background-size: 100%;
 
   /* push down and to the right */
-  margin-top: 130px; /* ~ a little less than half of skillset height */
+  margin-top: 100px; /* ~ a little less than half of skillset height */
+  margin-bottom: 80px;
   margin-left: 60px;  /* TBD add a responsive-ness to change these margins */
 }
 .skillsets {
