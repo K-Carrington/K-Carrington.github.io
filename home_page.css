@@ -89,7 +89,7 @@ body {
 
 .details {
   color: white;
-  height: 400px;
+  max-height: 800px;
   width: 1200px;
   border: 1px solid;
   border-color: white;
