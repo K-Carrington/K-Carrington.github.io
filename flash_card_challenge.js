@@ -104,7 +104,7 @@ function flip(a_deck){
     var number_of_cards = 0; //player selected for the game
     var card_count = 0; //number played so far
     var elapsedTime_id;
-    var correct_a_index;
+    var correct_answer_info;
     var player_transition = false;
 
     this.introGame = function() {
@@ -119,13 +119,13 @@ function flip(a_deck){
     // local function
     // change font depending on string length
     function set_font_size_based_on_strlen(str, dom_elem) {
-      if (str.length < 25) {
+      if (str.length < 23) {
         $(dom_elem).css('fontSize', '30px');
       }
-      else if (str.length < 50) {
+      else if (str.length < 45) {
         $(dom_elem).css('fontSize', '24px');
       }
-      else if (str.length < 110) {
+      else if (str.length < 100) {
         $(dom_elem).css('fontSize', '18px');
       }
      else {
@@ -258,9 +258,11 @@ function flip(a_deck){
             
             if (player === 1) {
               $('#p1_progress_text').text(player1.getName() + " is too slow");
+              alert(player1.getName() + " is Wrong. Too slow. ");
             }
             else {
               $('#p2_progress_text').text(player2.getName() + " is too slow");
+              alert(player2.getName() + " is Wrong. Too slow. ");
             }
             //console.log("TIMING OUT TO NEXT PLAYER");
             clearInterval(elapsedTime_id);
@@ -268,7 +270,7 @@ function flip(a_deck){
           }
       }, 1000);
 
-      return j;
+      return {ans_idx: j, ans_txt: curr_deck[i][1]};
     } // display_q_and_answers
 
     //local function
@@ -288,24 +290,27 @@ function flip(a_deck){
         if (whos_turn === 1) {
           whos_turn = 2;
           $('#player').text(player2.getName() + "'s turn (" + player2.getChosenDeck() + ")");
-          correct_a_index = display_q_and_answers(whos_turn);
+          correct_answer_info = display_q_and_answers(whos_turn);
         }
         else { // player 2 just went
           card_count++;
           whos_turn = 1;
           $('#player').text(player1.getName() + "'s turn (" + player1.getChosenDeck() + ")");
-          correct_a_index = display_q_and_answers(whos_turn);
+          correct_answer_info = display_q_and_answers(whos_turn);
         }
       }
     }
 
     this.playGame = function() {
+      var curr_deck1 = card_deck[player1.getChosenDeck()];
+      var curr_deck2 = card_deck[player2.getChosenDeck()];
+
       // play game alternating users starting with player 1
       $('#p1_progress_text').text(player1.getName());
       $('#p2_progress_text').text(player2.getName());
       $('#player').text(player1.getName() + "'s turn (" + player1.getChosenDeck() + ")");
       card_count = 1; //will have already gone through first round by incr time
-      correct_a_index = display_q_and_answers(1);
+      correct_answer_info = display_q_and_answers(1);
       
       //
       // *** Answer Handler ***
@@ -326,9 +331,9 @@ function flip(a_deck){
         var tmp = box_idx.split('');
         box_idx = tmp[1] - 1;
   
-        //console.log("chosen ans = " + box_idx + ", correct ans = " + correct_a_index);
         // * display card result *
-        if (box_idx === correct_a_index) {
+        // correct_answer_info is: {ans_idx: j, ans_txt: curr_deck[i][1]};
+        if (box_idx === correct_answer_info.ans_idx) {
           // add a point for player
           if (whos_turn === 1) {
             player1.points_scored++;
@@ -336,6 +341,9 @@ function flip(a_deck){
             var p1_progress_height = (player1.points_scored / number_of_cards) * 400;
             //console.log("p1 prog height = " + p1_progress_height);
             $('#player1_progress').height(p1_progress_height);
+
+            //user can disable if they don't want the answer
+            alert(player1.getName() + ' is Correct! Answer: ' + correct_answer_info.ans_txt)
           }
           else {
             player2.points_scored++;
@@ -343,14 +351,17 @@ function flip(a_deck){
             var p2_progress_height = (player2.points_scored / number_of_cards) * 400;
             //console.log("p1 prog height = " + p1_progress_height);
             $('#player2_progress').height(p2_progress_height);
+            alert(player2.getName() + ' is Correct! Answer: ' + correct_answer_info.ans_txt)
           }
         }
         else { // player is wrong
           if (whos_turn === 1) {
             $('#p1_progress_text').text(player1.getName() + " is Wrong");
+            alert(player1.getName() + " is Wrong. The answer is: " + correct_answer_info.ans_txt)
           }
           else {
             $('#p2_progress_text').text(player2.getName() + " is Wrong");
+            alert(player2.getName() + " is Wrong. The answer is: " + correct_answer_info.ans_txt)
           }
         }
          next_player();
