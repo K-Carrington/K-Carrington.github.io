@@ -256,12 +256,14 @@ function flip(a_deck){
           if (elapsedTime >= time_limit) {
             player_transition = true;
             
-            if (player === 1) {
-              $('#p1_progress_text').text(player1.getName() + " is too slow");
+            if (player === 1) { 
+              $('#p1_progress_text').text(player1.getName() + " was too slow " + 
+                player1.points_scored+"/"+number_of_cards);
               alert(player1.getName() + " is Wrong. Too slow. ");
             }
             else {
-              $('#p2_progress_text').text(player2.getName() + " is too slow");
+              $('#p2_progress_text').text(player2.getName() + " was too slow " + 
+                player2.points_scored+"/"+number_of_cards);
               alert(player2.getName() + " is Wrong. Too slow. ");
             }
             //console.log("TIMING OUT TO NEXT PLAYER");
@@ -289,13 +291,13 @@ function flip(a_deck){
       else {
         if (whos_turn === 1) {
           whos_turn = 2;
-          $('#player').text(player2.getName() + "'s turn (" + player2.getChosenDeck() + ")");
+          $('#player').text(player2.getName() + "'s card "+card_count+" turn (" + player2.getChosenDeck() + ")");
           correct_answer_info = display_q_and_answers(whos_turn);
         }
         else { // player 2 just went
           card_count++;
           whos_turn = 1;
-          $('#player').text(player1.getName() + "'s turn (" + player1.getChosenDeck() + ")");
+          $('#player').text(player1.getName() + "'s card "+card_count+" turn (" + player1.getChosenDeck() + ")");
           correct_answer_info = display_q_and_answers(whos_turn);
         }
       }
@@ -308,7 +310,7 @@ function flip(a_deck){
       // play game alternating users starting with player 1
       $('#p1_progress_text').text(player1.getName());
       $('#p2_progress_text').text(player2.getName());
-      $('#player').text(player1.getName() + "'s turn (" + player1.getChosenDeck() + ")");
+      $('#player').text(player1.getName() + "'s card 1 turn (" + player1.getChosenDeck() + ")");
       card_count = 1; //will have already gone through first round by incr time
       correct_answer_info = display_q_and_answers(1);
       
@@ -330,6 +332,8 @@ function flip(a_deck){
         var box_idx = this.id;
         var tmp = box_idx.split('');
         box_idx = tmp[1] - 1;
+
+        var correct_answer_box = correct_answer_info.ans_idx + 1;
   
         // * display card result *
         // correct_answer_info is: {ans_idx: j, ans_txt: curr_deck[i][1]};
@@ -337,34 +341,38 @@ function flip(a_deck){
           // add a point for player
           if (whos_turn === 1) {
             player1.points_scored++;
-            $('#p1_progress_text').text(player1.getName() + " is Correct!");
+            $('#p1_progress_text').text(player1.getName() + " was Correct! " + 
+              player1.points_scored+"/"+number_of_cards);
             var p1_progress_height = (player1.points_scored / number_of_cards) * 400;
             //console.log("p1 prog height = " + p1_progress_height);
             $('#player1_progress').height(p1_progress_height);
 
             //user can disable if they don't want the answer
-            alert(player1.getName() + ' is Correct! Answer: ' + correct_answer_info.ans_txt)
+            alert(player1.getName() + ' is Correct! Answer from box: ' + correct_answer_box)
           }
           else {
             player2.points_scored++;
-            $('#p2_progress_text').text(player2.getName() + " is Correct!");
+            $('#p2_progress_text').text(player2.getName() + " was Correct! " + 
+              player2.points_scored+"/"+number_of_cards);
             var p2_progress_height = (player2.points_scored / number_of_cards) * 400;
             //console.log("p1 prog height = " + p1_progress_height);
             $('#player2_progress').height(p2_progress_height);
-            alert(player2.getName() + ' is Correct! Answer: ' + correct_answer_info.ans_txt)
+            alert(player2.getName() + ' is Correct! Answer from box: ' + correct_answer_box)
           }
         }
         else { // player is wrong
           if (whos_turn === 1) {
-            $('#p1_progress_text').text(player1.getName() + " is Wrong");
-            alert(player1.getName() + " is Wrong. The answer is: " + correct_answer_info.ans_txt)
+            $('#p1_progress_text').text(player1.getName() + " was Wrong " + 
+              player1.points_scored+"/"+number_of_cards);
+            alert(player1.getName() + " is Wrong. The correct answer is in: " + correct_answer_box)
           }
           else {
-            $('#p2_progress_text').text(player2.getName() + " is Wrong");
-            alert(player2.getName() + " is Wrong. The answer is: " + correct_answer_info.ans_txt)
+            $('#p2_progress_text').text(player2.getName() + " was Wrong " + 
+              player2.points_scored+"/"+number_of_cards);
+            alert(player2.getName() + " is Wrong. The correct answer is in box: " + correct_answer_box)
           }
         }
-         next_player();
+        next_player();
       }); // answer handler
 
     } //play_game function
